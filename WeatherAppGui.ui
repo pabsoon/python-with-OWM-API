@@ -12,8 +12,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
-    <height>200</height>
+    <width>661</width>
+    <height>454</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -41,66 +41,27 @@
      <verstretch>0</verstretch>
     </sizepolicy>
    </property>
-   <widget class="QGraphicsView" name="image">
-    <property name="geometry">
-     <rect>
-      <x>180</x>
-      <y>0</y>
-      <width>80</width>
-      <height>80</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="temperature">
-    <property name="geometry">
-     <rect>
-      <x>30</x>
-      <y>0</y>
-      <width>120</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Arial Rounded MT Bold</family>
-      <pointsize>40</pointsize>
-      <weight>75</weight>
-      <italic>false</italic>
-      <bold>true</bold>
-      <underline>false</underline>
-      <strikeout>false</strikeout>
-      <kerning>true</kerning>
-     </font>
-    </property>
-    <property name="layoutDirection">
-     <enum>Qt::LeftToRight</enum>
-    </property>
-    <property name="text">
-     <string>00</string>
-    </property>
-    <property name="alignment">
-     <set>Qt::AlignCenter</set>
-    </property>
-   </widget>
-   <widget class="Line" name="line">
+   <widget class="QPushButton" name="getDataBtn">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
-      <width>281</width>
-      <height>21</height>
+      <y>10</y>
+      <width>75</width>
+      <height>23</height>
      </rect>
     </property>
-    <property name="font">
-     <font>
-      <family>Monotype Corsiva</family>
-      <pointsize>16</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-     </font>
+    <property name="text">
+     <string>PushButton</string>
     </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainText">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>641</width>
+      <height>381</height>
+     </rect>
     </property>
    </widget>
   </widget>
@@ -109,7 +70,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>300</width>
+     <width>661</width>
      <height>21</height>
     </rect>
    </property>
