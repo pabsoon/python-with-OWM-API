@@ -10,8 +10,10 @@ CONF_FILE = "config.py"
 
 
 def get_weather_by_city_name(self, city_name: str, country_code: str, units: str):
+    check_config(self)
     weather_response = requests.get(
         f"https://api.openweathermap.org/data/2.5/weather?q={city_name},{country_code}&appid={config.API_KEY}&units={units}")
+
     return weather_response
 
 
@@ -30,16 +32,17 @@ def check_config(self):
         file.write("API_KEY = ''\nREFRESH_TIME = 5\nUNITS = 'metric'\n")
     elif len(config.API_KEY) < 31:
         self.tab_widget.setCurrentIndex(1)
-        show_pop_up("Warning", "Please paste your API Key in Settings Tab")
+        show_pop_up("Warning", "Please paste your API Key in Settings Tab", QMessageBox.Critical)
     else:
         # TODO timer
         self.tab_widget.setCurrentIndex(0)
 
 
-def show_pop_up(title: str, text: str):
+def show_pop_up(title: str, text: str, icon: QMessageBox.Icon):
     msg = QMessageBox()
     msg.setWindowTitle(title)
     msg.setText(text)
+    msg.setIcon(icon)
     msg.exec_()
 
 
