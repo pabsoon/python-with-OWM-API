@@ -12,8 +12,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>661</width>
-    <height>454</height>
+    <width>421</width>
+    <height>202</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -52,94 +52,512 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>661</width>
-      <height>461</height>
+      <width>421</width>
+      <height>201</height>
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="weatherTab">
      <attribute name="title">
       <string>Weather</string>
      </attribute>
-     <widget class="QPushButton" name="getDataBtn">
+     <widget class="QGroupBox" name="detailsBox">
       <property name="geometry">
        <rect>
         <x>0</x>
-        <y>20</y>
-        <width>75</width>
-        <height>23</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>PushButton</string>
-      </property>
-     </widget>
-     <widget class="QPlainTextEdit" name="plainText">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>70</y>
-        <width>661</width>
-        <height>361</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QLabel" name="imageLabel">
-      <property name="geometry">
-       <rect>
-        <x>100</x>
-        <y>10</y>
-        <width>50</width>
-        <height>50</height>
-       </rect>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::Panel</enum>
-      </property>
-      <property name="text">
-       <string>Image</string>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="tempLabel">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>10</y>
-        <width>71</width>
-        <height>50</height>
+        <y>-1</y>
+        <width>421</width>
+        <height>181</height>
        </rect>
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>16</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+        <stylestrategy>PreferDefault</stylestrategy>
+        <kerning>false</kerning>
        </font>
       </property>
-      <property name="frameShape">
-       <enum>QFrame::Panel</enum>
+      <property name="title">
+       <string>City</string>
       </property>
-      <property name="text">
-       <string>Temp</string>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
+      <widget class="QLabel" name="imageLabel">
+       <property name="geometry">
+        <rect>
+         <x>339</x>
+         <y>79</y>
+         <width>71</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>11</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Panel</enum>
+       </property>
+       <property name="text">
+        <string>Image</string>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="tempLabel">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>20</y>
+         <width>71</width>
+         <height>50</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>16</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Panel</enum>
+       </property>
+       <property name="text">
+        <string>Temp</string>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="getDataBtn">
+       <property name="geometry">
+        <rect>
+         <x>250</x>
+         <y>150</y>
+         <width>75</width>
+         <height>23</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Arial</family>
+         <pointsize>8</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+         <stylestrategy>PreferDefault</stylestrategy>
+         <kerning>false</kerning>
+        </font>
+       </property>
+       <property name="text">
+        <string>PushButton</string>
+       </property>
+      </widget>
+      <widget class="QFrame" name="frame">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>29</y>
+         <width>191</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QWidget" name="formLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>-1</x>
+          <y>-1</y>
+          <width>194</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>Description</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="descriptionLabel">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_3">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>Feels like</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="feelsLikeLabel">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_5">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>Pressure</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="pressureLabel">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>Humidity</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLabel" name="humidityLabel">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="label_9">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>Wind</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLabel" name="windLabel">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0">
+          <widget class="QLabel" name="label_11">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>Clouds</string>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QLabel" name="cloudsLabel">
+           <property name="font">
+            <font>
+             <family>Arial</family>
+             <pointsize>12</pointsize>
+             <weight>50</weight>
+             <italic>true</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <stylestrategy>PreferDefault</stylestrategy>
+             <kerning>false</kerning>
+            </font>
+           </property>
+           <property name="text">
+            <string>TextLabel</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="settingsTab">
      <attribute name="title">
       <string>Settings</string>
      </attribute>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>81</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Refresh time</string>
+      </property>
+      <widget class="QRadioButton" name="radioButton1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>82</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>1 min</string>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>82</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>5 min</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButton10">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>82</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>10 min</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>10</y>
+        <width>221</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>API Key</string>
+      </property>
+      <widget class="QLineEdit" name="lineEditKey">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>201</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>60</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Units of measurement</string>
+      </property>
+      <widget class="QRadioButton" name="radioButtonMetric">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>81</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>metric</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QRadioButton" name="radioButtonImperial">
+       <property name="geometry">
+        <rect>
+         <x>80</x>
+         <y>20</y>
+         <width>82</width>
+         <height>17</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>imperial</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="saveButton">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>70</y>
+        <width>61</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>

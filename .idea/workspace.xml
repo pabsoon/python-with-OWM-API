@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70dba7c0-e142-439b-a148-0558cb9dbe69" name="Changes" comment="Create function that retrieves data from OWM by city name, country code with metric units.&#10;Received data are put into plain text.&#10;Create file to store API keys">
+    <list default="true" id="70dba7c0-e142-439b-a148-0558cb9dbe69" name="Changes" comment="Added function to get an image based on weather icon (from response).&#10;Added two field for show temperature and image.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherAppGui.ui" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherAppGui.ui" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloworld.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/owmAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/owmAPI.py" afterDir="false" />
     </list>
@@ -134,7 +136,14 @@
       <option name="project" value="LOCAL" />
       <updated>1663671305040</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added function to get an image based on weather icon (from response).&#10;Added two field for show temperature and image.">
+      <created>1663792295431</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663792295431</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -151,6 +160,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added xml with GUI from QTdesigner. Addes some line to show app" />
     <MESSAGE value="Create function that retrieves data from OWM by city name, country code with metric units.&#10;Received data are put into plain text.&#10;Create file to store API keys" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create function that retrieves data from OWM by city name, country code with metric units.&#10;Received data are put into plain text.&#10;Create file to store API keys" />
+    <MESSAGE value="Added function to get an image based on weather icon (from response).&#10;Added two field for show temperature and image." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added function to get an image based on weather icon (from response).&#10;Added two field for show temperature and image." />
   </component>
 </project>
