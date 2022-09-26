@@ -3,6 +3,8 @@ import sys
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
+
+import config
 import owmAPI
 
 
@@ -22,8 +24,11 @@ class WeatherApp(QMainWindow):
         self.wind_label = self.findChild(QLabel, "windLabel")
         self.clouds_label = self.findChild(QLabel, "cloudsLabel")
         self.save_button = self.findChild(QPushButton, "saveButton")
+        self.line_edit_api_key = self.findChild(QLineEdit, "lineEditApiKey")
 
         self.get_data_btn.clicked.connect(self.get_data)
+        self.save_button.clicked.connect(lambda: owmAPI.save_changed_config(5, self.line_edit_api_key.text(), 'metric'))
+        self.line_edit_api_key.setText(config.API_KEY)
 
     def get_data(self):
         weather_response = owmAPI.get_weather_by_city_name(self, "Warsaw", "PL", "metric")

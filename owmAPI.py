@@ -28,11 +28,10 @@ def check_config(self):
     self.line_edit_key = self.findChild(QLineEdit, "lineEditKey")
     self.tab_widget = self.findChild(QTabWidget, "tabWidget")
     if check_if_config_exists() is not True:
-        file = open(CONF_FILE, "a")
-        file.write("API_KEY = ''\nREFRESH_TIME = 5\nUNITS = 'metric'\n")
+        save_changed_config("", 5, "metric")
     elif len(config.API_KEY) < 31:
         self.tab_widget.setCurrentIndex(1)
-        show_pop_up("Warning", "Please paste your API Key in Settings Tab", QMessageBox.Critical)
+        show_pop_up("Warning", "Please paste your API Key in Settings Tab", QMessageBox.Warning)
     else:
         # TODO timer
         self.tab_widget.setCurrentIndex(0)
@@ -50,10 +49,9 @@ def check_if_config_exists():
     return os.path.isfile(CONF_FILE)
 
 
-def save_changed_config(self, refresh_time: int, api_key: str, units: str):
-    if refresh_time != config.REFRESH_TIME:
-        config.REFRESH_TIME = refresh_time
-    if api_key != config.API_KEY:
-        config.API_KEY = api_key
-    if units != config.UNITS:
-        config.UNITS = units
+def save_changed_config(refresh_time: int, api_key: str, units: str):
+    if api_key == "" or api_key is None or len(api_key) != 32:
+        show_pop_up("Error!", "!!Bad API Key!!", QMessageBox.Critical)
+    else:
+        file = open(CONF_FILE, "w")
+        file.write(f"API_KEY = '{api_key}'\nREFRESH_TIME = {refresh_time}\nUNITS = '{units}'\n")
