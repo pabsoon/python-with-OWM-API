@@ -12,8 +12,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>421</width>
-    <height>202</height>
+    <width>424</width>
+    <height>203</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -31,8 +31,15 @@
   <property name="windowTitle">
    <string>Weather App - Open Weather Map</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>Files/app.png</normaloff>Files/app.png</iconset>
+  </property>
   <property name="autoFillBackground">
    <bool>false</bool>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonIconOnly</enum>
   </property>
   <property name="tabShape">
    <enum>QTabWidget::Triangular</enum>
@@ -499,7 +506,7 @@
      </palette>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="weatherTab">
      <attribute name="title">
@@ -550,7 +557,10 @@
         <enum>QFrame::Panel</enum>
        </property>
        <property name="text">
-        <string>Image</string>
+        <string/>
+       </property>
+       <property name="pixmap">
+        <pixmap>Files/no_512.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>true</bool>

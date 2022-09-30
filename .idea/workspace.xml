@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70dba7c0-e142-439b-a148-0558cb9dbe69" name="Changes" comment="Improvement method for popups">
+    <list default="true" id="70dba7c0-e142-439b-a148-0558cb9dbe69" name="Changes" comment="Improvement key handling">
+      <change afterPath="$PROJECT_DIR$/Files/app.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Files/no_512.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherAppGui.ui" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherAppGui.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -31,14 +34,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/mariu/Documents/Python Scripts/python-with-OWM-API&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/mariu/Documents/Python Scripts/python-with-OWM-API/Files",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mariu\Documents\Python Scripts\python-with-OWM-API\Files" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="config" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="python-with-OWM-API" />
@@ -127,8 +135,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.config" />
         <item itemvalue="Python.owmAPI" />
+        <item itemvalue="Python.config" />
         <item itemvalue="Python.helloworld" />
       </list>
     </recent_temporary>
@@ -177,7 +185,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664216717730</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Improvement key handling">
+      <created>1664221260893</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1664221260893</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -197,6 +212,7 @@
     <MESSAGE value="Added function to get an image based on weather icon (from response).&#10;Added two field for show temperature and image." />
     <MESSAGE value="Added new element in gui (description, settings element etc).&#10;Added function to check if config file exists.&#10;Added function with popups." />
     <MESSAGE value="Improvement method for popups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improvement method for popups" />
+    <MESSAGE value="Improvement key handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improvement key handling" />
   </component>
 </project>
