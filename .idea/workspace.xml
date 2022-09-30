@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70dba7c0-e142-439b-a148-0558cb9dbe69" name="Changes" comment="update gitignore">
+    <list default="true" id="70dba7c0-e142-439b-a148-0558cb9dbe69" name="Changes" comment="Refactor set and get data methods.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherAppGui.ui" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherAppGui.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -203,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664534760796</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Refactor set and get data methods.">
+      <created>1664538250923</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664538250923</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,6 +233,7 @@
     <MESSAGE value="Improvement key handling" />
     <MESSAGE value="Use configparser instead of file. Refactor checking config, save config and read config methods." />
     <MESSAGE value="update gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="update gitignore" />
+    <MESSAGE value="Refactor set and get data methods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor set and get data methods." />
   </component>
 </project>

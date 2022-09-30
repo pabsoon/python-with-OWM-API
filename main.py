@@ -9,26 +9,48 @@ import owmAPI
 
 
 class WeatherApp(QMainWindow):
+
     def __init__(self):
         super().__init__()
         uic.loadUi("WeatherAppGui.ui", self)
-        self.get_data_btn = self.findChild(QPushButton, "getDataBtn")
+
         self.image_label = self.findChild(QLabel, "imageLabel")
         self.temp_label = self.findChild(QLabel, "tempLabel")
-        self.details_box = self.findChild(QGroupBox, "detailsBox")
         self.description_label = self.findChild(QLabel, "descriptionLabel")
         self.feels_like_label = self.findChild(QLabel, "feelsLikeLabel")
         self.pressure_label = self.findChild(QLabel, "pressureLabel")
         self.humidity_label = self.findChild(QLabel, "humidityLabel")
         self.wind_label = self.findChild(QLabel, "windLabel")
         self.clouds_label = self.findChild(QLabel, "cloudsLabel")
+
+        self.get_data_btn = self.findChild(QPushButton, "getDataBtn")
         self.save_button = self.findChild(QPushButton, "saveButton")
+        self.reload_button = self.findChild(QPushButton, "reloadButton")
+
+        self.details_box = self.findChild(QGroupBox, "detailsBox")
+
         self.line_edit_api_key = self.findChild(QLineEdit, "lineEditApiKey")
+
         self.tab_widget = self.findChild(QTabWidget, "tabWidget")
+
         self.tab_widget.setCurrentIndex(0)
-        self.get_data_btn.clicked.connect(self.set_data)
-        self.save_button.clicked.connect(lambda: owmAPI.save_config(self.line_edit_api_key.text(), 5, 'metric'))
         self.line_edit_api_key.setText(owmAPI.read_config('API_KEY'))
+
+        self.radios_time = [self.findChild(QRadioButton, "radioButton1"),
+                            self.findChild(QRadioButton, "radioButton2"),
+                            self.findChild(QRadioButton, "radioButton3")]
+
+        self.radios_unit = [self.findChild(QRadioButton, "radioButtonImperial"),
+                            self.findChild(QRadioButton, "radioButtonMetric")]
+
+        self.set_radio()
+
+        self.get_data_btn.clicked.connect(self.set_data)
+        self.save_button.clicked.connect(lambda: owmAPI.save_config(
+            self.line_edit_api_key.text(),
+            self.check_refresh_radio(),
+            self.check_unit_radio()))
+        self.reload_button.clicked.connect(lambda: reload())
 
     def set_data(self):
         data = owmAPI.get_weather_by_city_name(self, "Warsaw", "PL")
@@ -49,19 +71,55 @@ class WeatherApp(QMainWindow):
             self.wind_label.setText(f'{data["wind"]["speed"]}{units[1]}')
             self.clouds_label.setText(f'{data["clouds"]["all"]}%')
 
+    def set_radio(self):
+        for i in self.radios_time:
+            if i.text() == owmAPI.read_config("REFRESH_TIME"):
+                i.setChecked(True)
+        for i in self.radios_unit:
+            if i.text() == owmAPI.read_config("UNITS"):
+                i.setChecked(True)
+
+    def check_refresh_radio(self):
+        selected_radio = 0
+        for i in self.radios_time:
+            if i.isChecked():
+                selected_radio = int(i.text())
+                print(i.text())
+        return selected_radio
+
+    def check_unit_radio(self):
+        selected_radio = ''
+        for i in self.radios_unit:
+            if i.isChecked():
+                selected_radio = i.text()
+                print(i.text())
+        return selected_radio
+
 
 app = QApplication(sys.argv)
-
 window = WeatherApp()
-
 window.show()
-#owmAPI.check_config_file(window)
+# TODO: something to reload keys for api after save, like refresh time
+
+timer = QTimer()
+
 if owmAPI.check_config_file(window):
     QTimer.singleShot(1, lambda: window.set_data())
-    timer = QTimer()
+
     timer.timeout.connect(lambda: window.set_data())
     timer.setInterval(int(owmAPI.read_config("refresh_time")) * 1000)
     timer.start()
+
+
+def reload():
+    print("reload")
+    timer.stop()
+    print(owmAPI.read_config("refresh_time"))
+    timer.setInterval(int(owmAPI.read_config("refresh_time")) * 1000)
+    print("after reload")
+    print(owmAPI.read_config("refresh_time"))
+    timer.start()
+    pass
 
 
 sys.exit(app.exec_())

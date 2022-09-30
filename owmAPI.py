@@ -46,8 +46,8 @@ def check_config_file(self):
             self.tab_widget.setCurrentIndex(1)
             show_pop_up("Warning", "Please paste correct API Key in Settings Tab", QMessageBox.Warning)
             return False
-        if __refresh_time < 1 or __refresh_time > 100:
-            print(f'value {__refresh_time} is not between 1 and 100')
+        if __refresh_time < 1 or __refresh_time > 1000:
+            print(f'value {__refresh_time} is not between 1 and 1000')
             return False
         if __units == 'metric' or __units == 'imperial':
 
