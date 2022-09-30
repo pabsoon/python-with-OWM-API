@@ -581,7 +581,7 @@
        <property name="font">
         <font>
          <family>Arial</family>
-         <pointsize>16</pointsize>
+         <pointsize>13</pointsize>
          <weight>75</weight>
          <bold>true</bold>
          <stylestrategy>PreferDefault</stylestrategy>

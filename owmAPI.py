@@ -18,17 +18,18 @@ def show_pop_up(title: str, text: str, icon: QMessageBox.Icon):
 
 def get_weather_by_city_name(self, city_name: str, country_code: str):
     if check_config_file(self):
-        weather_response = requests.get(
+        res = requests.get(
             f"https://api.openweathermap.org/data/2.5/weather?q={city_name},"
             f"{country_code}&appid={read_config('API_KEY')}&units={read_config('UNITS')}")
         print("API refreshed")
-        return weather_response
+
+        return res.json()
     else:
         show_pop_up("ERROR API", "Incorrect config file!!\nDelete it and run app again", QMessageBox.Critical)
         return False
 
 
-def get_weather_image(self, code: str):
+def get_weather_image(code: str):
     image_response = requests.get(f"https://openweathermap.org/img/wn/{code}@2x.png")
     image = QImage()
     image.loadFromData(image_response.content)
