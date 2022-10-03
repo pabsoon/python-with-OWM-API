@@ -12,7 +12,10 @@ class WeatherApp(QMainWindow):
 
     def __init__(self):
         super().__init__()
+
         uic.loadUi("WeatherAppGui.ui", self)
+
+        self.setFixedSize(330, 200)
 
         self.image_label = self.findChild(QLabel, "imageLabel")
         self.temp_label = self.findChild(QLabel, "tempLabel")
@@ -23,9 +26,7 @@ class WeatherApp(QMainWindow):
         self.wind_label = self.findChild(QLabel, "windLabel")
         self.clouds_label = self.findChild(QLabel, "cloudsLabel")
 
-        self.get_data_btn = self.findChild(QPushButton, "getDataBtn")
         self.save_button = self.findChild(QPushButton, "saveButton")
-        self.reload_button = self.findChild(QPushButton, "reloadButton")
 
         self.details_box = self.findChild(QGroupBox, "detailsBox")
 
@@ -45,12 +46,15 @@ class WeatherApp(QMainWindow):
 
         self.set_radio()
 
-        self.get_data_btn.clicked.connect(self.set_data)
-        self.save_button.clicked.connect(lambda: owmAPI.save_config(
-            self.line_edit_api_key.text(),
-            self.check_refresh_radio(),
-            self.check_unit_radio()))
-        self.reload_button.clicked.connect(lambda: reload())
+        self.save_button.clicked.connect(lambda: owmAPI.save_config(self,
+                                                                    self.line_edit_api_key.text(),
+                                                                    self.check_refresh_radio(),
+                                                                    self.check_unit_radio()))
+
+        self.qtimer = QTimer()
+        self.qtimer.timeout.connect(lambda: window.set_data())
+
+        QTimer.singleShot(1, lambda: window.set_data())
 
     def set_data(self):
         data = owmAPI.get_weather_by_city_name(self, "Warsaw", "PL")
@@ -95,31 +99,16 @@ class WeatherApp(QMainWindow):
                 print(i.text())
         return selected_radio
 
-
-app = QApplication(sys.argv)
-window = WeatherApp()
-window.show()
-# TODO: something to reload keys for api after save, like refresh time
-
-timer = QTimer()
-
-if owmAPI.check_config_file(window):
-    QTimer.singleShot(1, lambda: window.set_data())
-
-    timer.timeout.connect(lambda: window.set_data())
-    timer.setInterval(int(owmAPI.read_config("refresh_time")) * 1000)
-    timer.start()
+    def reload_timer(self):
+        self.qtimer.stop()
+        QTimer.singleShot(1, lambda: window.set_data())
+        self.qtimer.setInterval(int(owmAPI.read_config("REFRESH_TIME")) * 1000)
+        self.qtimer.start()
 
 
-def reload():
-    print("reload")
-    timer.stop()
-    print(owmAPI.read_config("refresh_time"))
-    timer.setInterval(int(owmAPI.read_config("refresh_time")) * 1000)
-    print("after reload")
-    print(owmAPI.read_config("refresh_time"))
-    timer.start()
-    pass
-
-
-sys.exit(app.exec_())
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    window = WeatherApp()
+    window.show()
+    window.reload_timer()
+    sys.exit(app.exec_())

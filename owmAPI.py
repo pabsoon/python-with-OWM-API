@@ -21,7 +21,6 @@ def get_weather_by_city_name(self, city_name: str, country_code: str):
         res = requests.get(
             f"https://api.openweathermap.org/data/2.5/weather?q={city_name},"
             f"{country_code}&appid={read_config('API_KEY')}&units={read_config('UNITS')}")
-        print("API refreshed")
 
         return res.json()
     else:
@@ -74,11 +73,12 @@ def create_config(api_key: str, refresh_time: int, units: str):
         config.write(file)
 
 
-def save_config(api_key: str, refresh_time: int, units: str):
+def save_config(self, api_key: str, refresh_time: int, units: str):
     if api_key == "" or api_key is None or len(api_key) != 32:
         show_pop_up("Error!", "!!Bad API Key!!", QMessageBox.Critical)
     else:
         create_config(api_key, refresh_time, units)
+        self.reload_timer()
 
 
 def read_config(key_name: str):

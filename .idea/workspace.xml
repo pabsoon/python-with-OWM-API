@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70dba7c0-e142-439b-a148-0558cb9dbe69" name="Changes" comment="Refactor set and get data methods.">
+    <list default="true" id="70dba7c0-e142-439b-a148-0558cb9dbe69" name="Changes" comment="Added functions to save and read radio buttons.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WeatherAppGui.ui" beforeDir="false" afterPath="$PROJECT_DIR$/WeatherAppGui.ui" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -31,14 +31,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/mariu/Documents/Python Scripts/python-with-OWM-API/Files",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/mariu/Documents/Python Scripts/python-with-OWM-API/Files&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\mariu\Documents\Python Scripts\python-with-OWM-API\Files" />
@@ -210,7 +210,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664538250923</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added functions to save and read radio buttons.">
+      <created>1664546256609</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664546256609</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +241,7 @@
     <MESSAGE value="Use configparser instead of file. Refactor checking config, save config and read config methods." />
     <MESSAGE value="update gitignore" />
     <MESSAGE value="Refactor set and get data methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor set and get data methods." />
+    <MESSAGE value="Added functions to save and read radio buttons." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added functions to save and read radio buttons." />
   </component>
 </project>
