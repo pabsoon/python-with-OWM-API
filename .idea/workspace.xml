@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="70dba7c0-e142-439b-a148-0558cb9dbe69" name="Changes" comment="Added better reload function. Added some screenshots.">
+    <list default="true" id="70dba7c0-e142-439b-a148-0558cb9dbe69" name="Changes" comment="Last changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/owmAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/functions.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664801007553</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Last changes">
+      <created>1664801640512</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1664801640512</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,6 +255,7 @@
     <MESSAGE value="Refactor set and get data methods." />
     <MESSAGE value="Added functions to save and read radio buttons." />
     <MESSAGE value="Added better reload function. Added some screenshots." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added better reload function. Added some screenshots." />
+    <MESSAGE value="Last changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Last changes" />
   </component>
 </project>

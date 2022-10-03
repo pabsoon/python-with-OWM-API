@@ -2,7 +2,8 @@ import sys
 
 from PyQt5.QtCore import QTimer
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QMainWindow, QLabel, QPushButton, QGroupBox, QLineEdit, QTabWidget, QRadioButton, \
+    QApplication
 from PyQt5 import uic
 
 import functions
