@@ -21,15 +21,20 @@ def get_weather_by_city_name(self, city_name: str, country_code: str):
         res = requests.get(
             f"https://api.openweathermap.org/data/2.5/weather?q={city_name},"
             f"{country_code}&appid={read_config('API_KEY')}&units={read_config('UNITS')}")
-
+        if res.status_code != 200:
+            show_pop_up("API ERROR", f"Error due to download data.\nStatus: {res.status_code}", QMessageBox.Critical)
+            return False
         return res.json()
     else:
-        show_pop_up("ERROR API", "Incorrect config file!!\nDelete it and run app again", QMessageBox.Critical)
+        show_pop_up("API ERROR", "Incorrect config file!!\nDelete it and run app again", QMessageBox.Critical)
         return False
 
 
 def get_weather_image(code: str):
     image_response = requests.get(f"https://openweathermap.org/img/wn/{code}@2x.png")
+    if image_response.status_code != 200:
+        show_pop_up("API ERROR", f"Error due to download image.\nStatus: {image_response.status_code}", QMessageBox.Critical)
+        return False
     image = QImage()
     image.loadFromData(image_response.content)
     return image

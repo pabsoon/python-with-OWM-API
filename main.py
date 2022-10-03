@@ -5,7 +5,7 @@ from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import *
 from PyQt5 import uic
 
-import owmAPI
+import functions
 
 
 class WeatherApp(QMainWindow):
@@ -35,7 +35,7 @@ class WeatherApp(QMainWindow):
         self.tab_widget = self.findChild(QTabWidget, "tabWidget")
 
         self.tab_widget.setCurrentIndex(0)
-        self.line_edit_api_key.setText(owmAPI.read_config('API_KEY'))
+        self.line_edit_api_key.setText(functions.read_config('API_KEY'))
 
         self.radios_time = [self.findChild(QRadioButton, "radioButton1"),
                             self.findChild(QRadioButton, "radioButton2"),
@@ -46,10 +46,12 @@ class WeatherApp(QMainWindow):
 
         self.set_radio()
 
-        self.save_button.clicked.connect(lambda: owmAPI.save_config(self,
-                                                                    self.line_edit_api_key.text(),
-                                                                    self.check_refresh_radio(),
-                                                                    self.check_unit_radio()))
+        self.save_button.clicked.connect(
+            lambda: functions.save_config(
+                self,
+                self.line_edit_api_key.text(),
+                self.check_refresh_radio(),
+                self.check_unit_radio()))
 
         self.qtimer = QTimer()
         self.qtimer.timeout.connect(lambda: window.set_data())
@@ -57,14 +59,14 @@ class WeatherApp(QMainWindow):
         QTimer.singleShot(1, lambda: window.set_data())
 
     def set_data(self):
-        data = owmAPI.get_weather_by_city_name(self, "Warsaw", "PL")
+        data = functions.get_weather_by_city_name(self, "Warsaw", "PL")
         if data != False:
             units = '', ''
-            if owmAPI.read_config('UNITS') == 'metric':
+            if functions.read_config('UNITS') == 'metric':
                 units = '°C', 'm/s'
             else:
                 units = '°F', 'm/h'
-            image = owmAPI.get_weather_image(data["weather"][0]["icon"])
+            image = functions.get_weather_image(data["weather"][0]["icon"])
             self.details_box.setTitle(f'{data["name"]} {data["sys"]["country"]}')
             self.image_label.setPixmap(QPixmap(image))
             self.temp_label.setText(f'{data["main"]["temp"]}{units[0]}')
@@ -77,10 +79,10 @@ class WeatherApp(QMainWindow):
 
     def set_radio(self):
         for i in self.radios_time:
-            if i.text() == owmAPI.read_config("REFRESH_TIME"):
+            if i.text() == functions.read_config("REFRESH_TIME"):
                 i.setChecked(True)
         for i in self.radios_unit:
-            if i.text() == owmAPI.read_config("UNITS"):
+            if i.text() == functions.read_config("UNITS"):
                 i.setChecked(True)
 
     def check_refresh_radio(self):
@@ -102,7 +104,7 @@ class WeatherApp(QMainWindow):
     def reload_timer(self):
         self.qtimer.stop()
         QTimer.singleShot(1, lambda: window.set_data())
-        self.qtimer.setInterval(int(owmAPI.read_config("REFRESH_TIME")) * 1000)
+        self.qtimer.setInterval(int(functions.read_config("REFRESH_TIME")) * 1000)
         self.qtimer.start()
 
 
