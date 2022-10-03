@@ -130,6 +130,7 @@ dmypy.json
 
 .idea
 /.idea
+/.idea/
 !/.idea
 /config.py
 !/Files/config.ini
@@ -255,3 +256,4 @@ modules.xml
 .idea/vcs.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm
+/.idea/inspectionProfiles/Project_Default.xml
