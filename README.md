@@ -4,18 +4,13 @@ The first approach to creating a Python application using GUI and API.
 Project objective to test my skills in writing applications (in this case in Python).
 
 Main assumptions of this project:
-* Application has a simple GUI displaying basic weather data.
+* Application has a simple GUI displaying basic weather data (I used PyQt5 library)
 * Weather data is downloaded using the free version of the API - [OpenWeatherMap](https://openweathermap.org/)
-* TODO
+* Data like API key are stored in the file (used ConfigParser) and data is not uploaded to repo.
 
-**!!!IMPORTANT!!!** 
 
-Application need a file with API key.
+Some screenshots:
 
-File name: 
+![Weather_screen](https://github.com/pabsoon/python-with-OWM-API/blob/main/Files/Weather_sreen.PNG?raw=true)
 
-> api_key.py
-
-File content:
-
-> API_KEY = "your api key from OWM"
+![Weather_screen](https://github.com/pabsoon/python-with-OWM-API/blob/main/Files/Settings_screen.PNG?raw=true)
